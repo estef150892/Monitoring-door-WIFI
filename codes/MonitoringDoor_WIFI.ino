@@ -1,5 +1,6 @@
 // 27 abril 2018
 //Programa en el ESP8266 para conectar a WIFI y mandar los estados OPEN y CLOSE de la puerta 
+// strings enviados a topico Puerta usando mqtt
 
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
