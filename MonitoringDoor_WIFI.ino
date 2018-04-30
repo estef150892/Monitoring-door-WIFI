@@ -1,11 +1,14 @@
+// 27 abril 2018
+//Programa en el ESP8266 para conectar a WIFI y mandar los estados OPEN y CLOSE de la puerta 
+
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
 // Update these with values suitable for your network.
 
-const char* ssid = "POPUPSTORE";
-const char* password = "R0alc0m.2018";
-const char* mqtt_server = "159.65.92.192";
+const char* ssid = "WIFIssid";
+const char* password = "WIFIpassword";
+const char* mqtt_server = "XXX.XX.XX.XXX";//direccion del server
 
 int door  = 5;//D1 recibe señal de estado door
 int door_state = 0;//inicio abierto
@@ -86,7 +89,7 @@ door_state = digitalRead(door);
   }
  }
   else{
-    client.publish("Puerta", "open");
+    client.publish("Puerta", "open");//topico Puerta del mqtt donde se publica estado
     Serial.printf("open");
     }
  last_door_state=door_state;
